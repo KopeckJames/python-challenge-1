@@ -161,17 +161,15 @@ while place_order:
         print("You didn't select a number.")
 
     while True:
-        # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").upper()
-
-        # 5. Check the customer's input
-        if keep_ordering == 'Y':
-            break  
-        elif keep_ordering == 'N':
-            place_order = False  
-            break  
-        else:
-            print("Please enter 'Y' for yes or 'N' for no.")
+        match keep_ordering:
+            case 'Y':
+                break  # Exit the inner loop if 'Y' is selected
+            case 'N':
+                place_order = False
+                break  # Exit the outer loop and inner loop if 'N' is selected
+            case _:
+                print("Please enter 'Y' for yes or 'N' for no.")
 
 # Thank the customer and potentially display the order (optional)
 print("Thank you for your order!")
