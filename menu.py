@@ -189,7 +189,7 @@ for item in order_list:
 
     
     formatted_price = f"${item_price:.2f}"
-    print(f"{item_quantity}x {item_name:<30} {formatted_price:>8}")  # Align right, pad left
+    print(f"{item_name:<25}{formatted_price:>8}{item_quantity:>10}")  # Align right, pad left
 
     total_price += item_price * item_quantity
 
